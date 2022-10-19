@@ -1,33 +1,59 @@
 <template>
-    <h1>Axios Demo</h1>
-    <v-btn @click="getQuestions">Get Post </v-btn>
-    <v-list-item
-          v-for="question in questions "
-          :key="question.id"
+
+<v-simple-table dark>
+    <template v-slot:default>
+      <thead>
+        <tr>
+          <th class="text-left">
+            Classes
+          </th>
+          <th class="text-left">
+            Calories
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+        v-for="item in covidData"
+
         >
-          <v-list-item-title>{{ question.question }}</v-list-item-title>
-          <v-list-item>
-              {{question.correct_answer}}   
-          </v-list-item>        
-          
-    </v-list-item>
-      
+          <td>{{ item.classes }}</td>
+
+        </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
+    
     
 </template>
 
 <script setup>
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
   import axios from 'axios'
 
-  const questions=ref([])
+  const  covidData=ref([])
 
-  async function getQuestions () {
-       axios.get('https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple').then( response => {
-       questions.value=(response.data.results)
-       
+
+  async function getCovidData () {
+       axios({
+                method:'GET',
+                url:'https://omgvamp-hearthstone-v1.p.rapidapi.com/info', 
+                
+                headers: {
+                  'X-RapidAPI-Key': 'be20050593msh31f5bb3c1795313p1efbb7jsnd6e8d87654e8',
+                  'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
+                        }  
+            }).then( response => {
+       covidData.value=(response.data)
+       console.log(covidData.value)
       })
   
   }
+
+
+   onMounted( async () => {
+       await getCovidData()
+   })
 
   
 </script>

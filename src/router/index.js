@@ -3,6 +3,9 @@ import BasicMathView from '../views/BasicMathView.vue'
 import StringAppView from '../views/StringAppView.vue'
 import HomeView from '../views/StringAppView.vue'
 import AxiosDemo from '../views/AxiosDemo.vue'
+import AboutMe from '../views/AboutMe.vue'
+import Area from '../views/Area.vue'
+
 
 
 
@@ -29,7 +32,17 @@ const router = createRouter({
     name:'axiosDemo',
     component: AxiosDemo
     },
-
+    {
+      path: '/aboutMe',
+      name:'aboutMe',
+      component: AboutMe
+    },    
+    {
+      path: '/area',
+      name:'area',
+      component: Area
+    }    
+  
   ]
 })
 

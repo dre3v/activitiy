@@ -12,24 +12,24 @@
     <v-menu
       open-on-hover
     >
-      <template v-slot:activator="{ props }">
-        <v-btn
-          color="primary"
-          v-bind="props"
-        >
-          Dropdown
-        </v-btn>
-      </template>
+        <template v-slot:activator="{ props }">
+          <v-btn
+            color="primary"
+            v-bind="props"
+          >
+            Dropdown
+          </v-btn>
+        </template>
 
-      <v-list>
-        <v-list-item
-          v-for="(item, index) in items"
-          :key="index"
-          router
-          :to="item.path" :prepend-icon="item.icon">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item>
-      </v-list>
+        <v-list>
+          <v-list-item
+            v-for="(item, index) in items"
+            :key="index"
+            router
+            :to="item.path" :prepend-icon="item.icon">
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
     </v-menu>
 
       <v-btn flat color="grey">
@@ -61,9 +61,14 @@
 
   const  items =  ref([
            { title: 'Dashboard', icon: 'mdi-view-dashboard', path: '/' },
-           { title: 'Math', icon: 'mdi-plus-one', path: '/basicMath' },
-           { title: 'String App', icon: 'mdi-help-box', path: '/stringApp'},
-           { title: 'Axios Demo', icon: 'mdi-help-box', path: '/axiosDemo'},
+           { title: 'Basic Math Demo', icon: 'mdi-plus-one', path: '/basicMath' },
+           { title: 'String App', icon: 'mdi-account-child', path: '/stringApp'},
+           { title: 'Axios Demo', icon: 'mdi-alert', path: '/axiosDemo'},
+           { title: 'About Me', icon: 'mdi-alien', path: '/aboutMe'},
+           { title: 'Area Calculator', icon: 'mdi-alien', path: '/area'},
+           
+           
+
            
         ])
 
