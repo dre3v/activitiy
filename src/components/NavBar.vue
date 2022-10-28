@@ -66,7 +66,7 @@
            { title: 'Axios Demo', icon: 'mdi-alert', path: '/axiosDemo'},
            { title: 'About Me', icon: 'mdi-alien', path: '/aboutMe'},
            { title: 'Area Calculator', icon: 'mdi-alien', path: '/area'},
-           
+           { title: 'Quiz Application', icon: 'mdi-lightbulb-on', path: '/quiz'},
            
 
            
