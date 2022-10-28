@@ -5,7 +5,7 @@ import HomeView from '../views/StringAppView.vue'
 import AxiosDemo from '../views/AxiosDemo.vue'
 import AboutMe from '../views/AboutMe.vue'
 import Area from '../views/Area.vue'
-
+import Quiz from '../views/QuizApp.vue'
 
 
 
@@ -41,7 +41,12 @@ const router = createRouter({
       path: '/area',
       name:'area',
       component: Area
-    }    
+    },
+     {
+      path: '/quiz',
+      name:'QuizApp',
+      component: Quiz
+    },        
   
   ]
 })
